@@ -1,0 +1,133 @@
+/* ================= GLOBAL RESPONSIVE FIX ================= */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* ================= GRID RESPONSIVE ================= */
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* ================= HERO ================= */
+.hero-section {
+  height: 450px;
+}
+
+.hero-content {
+  max-width: 600px;
+}
+
+/* ================= KEPALA SEKOLAH ================= */
+.kepsek-section {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.kepsek-section img {
+  width: 300px;
+}
+
+/* ================= GURU ================= */
+.guru-container {
+  justify-content: center;
+}
+
+.guru-card {
+  width: 100%;
+  max-width: 250px;
+}
+
+/* ================= TABLET ================= */
+@media (max-width: 1024px) {
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero-content h1 {
+    font-size: 1.7rem;
+  }
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+
+  /* Grid turun jadi 1 kolom */
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: 1fr;
+  }
+
+  /* Hero */
+  .hero-section {
+    height: 300px;
+  }
+
+  .hero-content {
+    top: 30%;
+    left: 5%;
+    max-width: 90%;
+  }
+
+  .hero-content h1 {
+    font-size: 1.4rem;
+  }
+
+  /* Kepala Sekolah */
+  .kepsek-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .kepsek-section img {
+    width: 220px;
+  }
+
+  /* Guru */
+  .guru-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .guru-card {
+    max-width: 100%;
+  }
+
+  /* Section padding */
+  .section {
+    padding: 60px 6%;
+  }
+
+  /* Button lebih nyaman di HP */
+  .btn {
+    padding: 12px 20px;
+    font-size: 16px;
+  }
+}
+
+/* ================= MOBILE KECIL ================= */
+@media (max-width: 480px) {
+
+  body {
+    font-size: 14px;
+  }
+
+  .hero-content h1 {
+    font-size: 1.2rem;
+  }
+
+  .kepsek-section img {
+    width: 180px;
+  }
+}

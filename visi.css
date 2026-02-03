@@ -1,0 +1,234 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Background header */
+.header {
+    background: #0a3d62;
+    color: white;
+    width: 100%;
+    padding: 30px 20px;
+    position: relative;
+    box-sizing: border-box;
+}
+
+/* Container isi header */
+.header-content {
+    display: flex;
+    align-items: center;
+}
+
+/* Logo sekolah */
+.logo {
+    width: 120px;
+    margin-right: 370px;
+}
+
+/* Teks judul dan slogan */
+.text-container h1 {
+    margin: 0;
+    font-size: 32px;
+    font-weight: bold;
+    color: #FFD037; /* Warna kuning seperti pada gambar */
+}
+
+.text-container p {
+    margin-top: 8px;
+    font-size: 20px;
+    color: white;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+
+/* Overlay */
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+    z-index: 998;
+}
+
+#overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -280px;
+    width: 280px;
+    height: 100%;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: white;
+    padding: 25px;
+    transition: 0.4s ease;
+    z-index: 999;
+    box-shadow: -6px 0 15px rgba(0,0,0,0.3);
+}
+
+.sidebar.active {
+    right: 0;
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    margin-bottom: 20px;
+}
+
+.sidebar ul li a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: white;
+    text-decoration: none;
+    padding: 12px;
+    border-radius: 8px;
+    transition: 0.3s;
+    font-size: 16px;
+}
+
+.sidebar ul li a:hover {
+    background: rgba(255,255,255,0.2);
+    transform: translateX(-5px);
+}
+
+/* Toggle Button */
+.toggle-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: transparent;
+    color: white;
+    border: none;
+    padding: 12px 15px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+body {
+    scroll-behavior: smooth;
+}
+
+.logo {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.section {
+    padding: 80px 10%;
+}
+
+.bg {
+    background: linear-gradient(to right, #1e90ff, #00c6ff);
+}
+
+.card {
+    background: wheat;
+    padding: 30px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.guru-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.guru-card {
+    background: wheat;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    width: 250px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.guru-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+footer {
+    background: #1e90ff;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* ANIMASI */
+.animate {
+    animation: fadeDown 1.2s forwards;
+}
+
+.animate h1 {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 0.8s;
+}
+
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.delay {
+    transition-delay: 0.3s;
+}
+
+@keyframes fadeDown {
+    from {
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* RESPONSIVE */
+@media(max-width:768px) {
+    .nav-links {
+        display: none;
+    }
+}

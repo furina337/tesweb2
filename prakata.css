@@ -1,0 +1,229 @@
+/* ================= RESET & GLOBAL ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #f4f7fb;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* ================= CONTAINER ================= */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ================= GRID & FLEX ================= */
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* ================= HERO ================= */
+.hero-section {
+  position: relative;
+  height: 450px;
+  overflow: hidden;
+}
+
+.hero-section img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.5);
+}
+
+.hero-content {
+  position: absolute;
+  top: 40%;
+  left: 5%;
+  color: #fff;
+  max-width: 550px;
+}
+
+.hero-content h1 {
+  font-size: 2rem;
+}
+
+/* ================= KEPALA SEKOLAH ================= */
+.kepsek-section {
+  padding: 60px 20px;
+}
+
+.kepsek-container {
+  max-width: 1100px;
+  margin: auto;
+  background: #fff;
+  padding: 40px;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  box-shadow: 0 20px 40px rgba(0,0,0,.1);
+}
+
+.kepsek-image img {
+  width: 260px;
+  border-radius: 18px;
+}
+
+.kepsek-content h2 {
+  font-size: 28px;
+  color: #0d47a1;
+}
+
+.kepsek-name {
+  margin: 10px 0;
+  color: #555;
+}
+
+.kepsek-text {
+  max-height: 130px;
+  overflow: hidden;
+  transition: .4s ease;
+}
+
+.kepsek-text.show {
+  max-height: 600px;
+}
+
+/* ================= BUTTON ================= */
+.btn {
+  padding: 12px 22px;
+  border-radius: 30px;
+  border: none;
+  background: #2196f3;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn:hover {
+  opacity: .85;
+}
+
+/* ================= GURU ================= */
+.guru-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.guru-card {
+  background: #fff;
+  width: 100%;
+  max-width: 240px;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,.1);
+}
+
+/* ================= FASILITAS ================= */
+.fasilitas-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.fasilitas-item {
+  background: #f5f5f5;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* ================= DARK MODE ================= */
+body.dark {
+  background: #0f172a;
+  color: #e2e8f0;
+}
+
+body.dark .kepsek-container,
+body.dark .guru-card {
+  background: #1e293b;
+}
+
+/* ================= TABLET ================= */
+@media (max-width: 1024px) {
+  .grid-4,
+  .fasilitas-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ================= ANDROID ================= */
+@media (max-width: 768px) {
+
+  .grid-3,
+  .grid-4,
+  .fasilitas-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-section {
+    height: 300px;
+  }
+
+  .hero-content {
+    top: 30%;
+    max-width: 90%;
+  }
+
+  .hero-content h1 {
+    font-size: 1.4rem;
+  }
+
+  .kepsek-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .kepsek-image img {
+    width: 200px;
+  }
+}
+
+/* ================= MOBILE KECIL ================= */
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+
+  .hero-content h1 {
+    font-size: 1.2rem;
+  }
+
+  .kepsek-image img {
+    width: 180px;
+  }
+}
+

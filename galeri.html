@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Galeri Prestasi & Kegiatan</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Galeri.css">
+</head>
+<body>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMK SIANG SURABAYA</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+        <header class="header">
+        <div class="header-content">
+            <img src="1765287062419.png" alt="Logo Sekolah" class="logo">
+
+            <div class="text-container">
+                <h1>SMK SIANG SURABAYA</h1>
+                <p>Siap Kerja - Santun - Mandiri - Kreatif</p>
+            </div>
+          </div>
+    </header>
+
+    <!-- Font Awesome Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Overlay -->
+    <div id="overlay" onclick="closeSidebar()"></div>
+
+    <!-- Toggle Button -->
+    <button class="toggle-btn" onclick="toggleSidebar()">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Sidebar -->
+    <div id="sidebar" class="sidebar">
+        <h2>Menu</h2>
+        <ul>
+            <li>
+                <a href="index.html" onclick="closeSidebar()">
+                    <i class="fas fa-home"></i> Beranda
+                </a>
+            </li>
+            <li>
+                <a href="profil.html" onclick="closeSidebar()">
+                    <i class="fas fa-user"></i> Profil
+                </a>
+            </li>
+            <li>
+                <a href="visi.html" onclick="closeSidebar()">
+                    <i class="fas fa-bullseye"></i> Visi & Misi
+                </a>
+            </li>
+            <li>
+                <a href="#kontak" onclick="closeSidebar()">
+                    <i class="fas fa-envelope"></i> Hubungi Kami
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <script src="flrx.js"></script>
+</body>
+
+<header class="head">
+
+    <div class="controls">
+        <button onclick="filterGallery('all')">Semua</button>
+        <button onclick="filterGallery('prestasi')">Prestasi</button>
+        <button onclick="filterGallery('kegiatan')">Kegiatan</button>
+    </div>
+</header>
+
+
+<section class="feed">
+
+    <div class="card prestasi reveal" onclick="openModal(this)">
+        <div class="image-box">
+            <img src="img/prestasi1.jpg">
+        </div>
+        <div class="caption">
+            <h3>🏆 Juara Nasional</h3>
+            <p>Siswa SMK berhasil meraih juara 1 lomba tingkat nasional.</p>
+        </div>
+    </div>
+
+    <div class="card prestasi reveal" onclick="openModal(this)">
+        <div class="image-box">
+            <img src="img/prestasi2.jpg">
+        </div>
+        <div class="caption">
+            <h3>🥇 Lomba Akademik</h3>
+            <p>Prestasi akademik membanggakan di tingkat provinsi.</p>
+        </div>
+    </div>
+
+    <div class="card kegiatan reveal" onclick="openModal(this)">
+        <div class="image-box">
+            <img src="img/kegiatan1.jpg">
+        </div>
+        <div class="caption">
+            <h3>📸 Kegiatan Pramuka</h3>
+            <p>Kegiatan latihan pramuka rutin setiap hari Jumat.</p>
+        </div>
+    </div>
+
+</section>
+
+<!-- Modal -->
+<div class="modal" id="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img id="modalImg">
+</div>
+
+<script src="Galeri.js"></script>
+</body>
+</html>

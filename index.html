@@ -1,0 +1,226 @@
+<!doctype html>
+
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Tutorial: Install Windows 7 di VirtualBox</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMK SIANG SURABAYA</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-content">
+            <img src="1765287062419.png" alt="Logo Sekolah" class="logo">
+
+            <div class="text-container">
+                <h1>SMK SIANG SURABAYA</h1>
+                <p>Siap Kerja - Santun - Mandiri - Kreatif</p>
+            </div>
+          </div>
+    </header>
+
+    <!-- Font Awesome Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Overlay -->
+    <div id="overlay" onclick="closeSidebar()"></div>
+
+    <!-- Toggle Button -->
+    <button class="toggle-btn" onclick="toggleSidebar()">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Sidebar -->
+    <div id="sidebar" class="sidebar">
+        <h2>Menu</h2>
+        <ul>
+            <li>
+                <a href="profil.html" onclick="closeSidebar()">
+                    <i class="fas fa-user"></i> Profil
+                </a>
+            </li>
+            <li>
+                <a href="visi.html" onclick="closeSidebar()">
+                    <i class="fas fa-bullseye"></i> Visi & Misi
+                </a>
+            </li>
+            <li>
+                <a href="galeri.html" onclick="closeSidebar()">
+                    <i class="fas fa-image"></i> Galeri
+                </a>
+            </li>
+            <li>
+                <a href="#kontak" onclick="closeSidebar()">
+                    <i class="fas fa-envelope"></i> Hubungi Kami
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <script src="flrx.js"></script>
+  </body>
+
+<body>
+  <main class="wrap">
+    <header>
+      <svg width="44" height="44" viewBox="0 0 24 24" fill="none" aria-hidden>
+        <rect x="2" y="3" width="20" height="18" rx="3" stroke="white" stroke-opacity="0.12"/>
+        <rect x="6" y="7" width="12" height="3" rx="1" fill="#3b82f6"/>
+      </svg>
+      <div>
+        <h1>Tutorial Lengkap: Menginstall Windows 7 di VirtualBox</h1>
+        <div class="meta">Langkah demi langkah — untuk pemula & menengah • tidak resmi</div>
+      </div>
+    </header><nav>
+  <a href="#persiapan">Persiapan</a>
+  <a href="#buat-vm">Buat VM</a>
+  <a href="#instalasi">Instalasi Windows</a>
+  <a href="#guest-additions">Guest Additions</a>
+  <a href="#tips">Tips & Troubleshoot</a>
+  <a href="#faq">FAQ</a>
+</nav>
+
+<div class="grid">
+  <article>
+    <section id="persiapan">
+      <img src="images/persiapan-virtualbox.png" alt="Persiapan install Windows 7 di VirtualBox" style="width:100%;border-radius:10px;margin:12px 0">
+      <h2>1. Persiapan (sebelum memulai)</h2>
+      <ul>
+        <li>Komputer host dengan VirtualBox terpasang (disarankan versi terbaru).</li>
+        <li>File ISO Windows 7 (mis. file .iso installer). Pastikan Anda memiliki lisensi/produk key yang sah jika diperlukan.</li>
+        <li>Minimal 8 GB RAM pada host (disarankan) — VM akan membutuhkan 2–4 GB untuk performa wajar.</li>
+        <li>Ruang disk kosong minimal 30 GB (lebih besar lebih baik).</li>
+        <li>Virtualisasi di BIOS/UEFI aktif (Intel VT-x atau AMD-V).</li>
+      </ul>
+
+      <div class="note">
+        <strong>Catatan legal:</strong> Pastikan Anda punya lisensi Windows 7 yang valid. Mengunduh ISO dari sumber tidak resmi dapat berisiko.
+      </div>
+    </section>
+
+    <section id="buat-vm">
+      <img src="images/buat-vm.png" alt="Membuat Virtual Machine di VirtualBox" style="width:100%;border-radius:10px;margin:12px 0">
+      <h2>2. Membuat Virtual Machine di VirtualBox</h2>
+      <ol>
+        <li>Buka VirtualBox → klik <em>New</em> (atau <em>Create</em>).</li>
+        <li>Isi nama VM, misal <code>Windows 7 x64</code>. Pilih <strong>Type:</strong> Microsoft Windows, <strong>Version:</strong> Windows 7 (64-bit) atau Windows 7 (32-bit) sesuai ISO Anda.</li>
+        <li>Atur memory (RAM): 2048–4096 MB untuk 64-bit, 1024–2048 MB untuk 32-bit (jangan beri lebih dari 50% RAM host).
+          <pre><code>Contoh: Host 16 GB → beri VM 4096 MB (4 GB)</code></pre>
+        </li>
+        <li>Buat virtual hard disk baru: pilih <em>VDI</em> (dynamically allocated), ukuran 40–80 GB sesuai kebutuhan.</li>
+        <li>Setelah VM dibuat, klik <em>Settings</em> → <em>System</em>:
+          <ul>
+            <li>Pastikan urutan boot: Optical (CD) → Hard Disk.</li>
+            <li>Enable <strong>EFI</strong> hanya jika Anda tahu apa itu — untuk Windows 7 umumnya <em>untick</em> (BIOS/legacy).</li>
+            <li>Di tab Processor, beri 1–2 CPU (jangan beri semua core host).</li>
+            <li>Di Acceleration, pastikan VT-x/AMD-V diaktifkan jika tersedia.</li>
+          </ul>
+        </li>
+        <li>Di tab <em>Display</em>, set Video Memory ke 64 MB (atau lebih) dan aktifkan 3D Acceleration jika Anda ingin UI sedikit lebih mulus.</li>
+        <li>Di tab <em>Storage</em>, klik ikon CD di bawah <em>Controller: IDE</em> atau <em>SATA</em>, pilih <em>Choose a disk file</em> lalu pilih file ISO Windows 7 Anda.</li>
+        <li>Di tab <em>Network</em>, pilih <em>Attached to:</em> NAT untuk akses internet sederhana atau Bridged Adapter untuk agar VM muncul di jaringan lokal.</li>
+      </ol>
+
+      <div class="note">Jika Anda akan menggunakan Windows 7 untuk tugas grafis/3D, pertimbangkan untuk menambah Video Memory dan mengaktifkan 3D Acceleration — tapi Windows 7 pada VirtualBox kadang membutuhkan driver tambahan.</div>
+    </section>
+
+    <section id="instalasi">
+      <img src="images/instalasi-windows7.png" alt="Proses instalasi Windows 7" style="width:100%;border-radius:10px;margin:12px 0">
+      <h2>3. Memulai Instalasi Windows 7</h2>
+      <ol>
+        <li>Jalankan VM (klik <em>Start</em>). VM akan boot dari ISO dan muncul wizard instalasi Windows 7.</li>
+        <li>Pilih bahasa, format waktu, dan keyboard → Klik Next → Install Now.</li>
+        <li>Masukkan product key jika diminta (Anda bisa melewatkan sementara dan aktivasi nanti jika instalasi mengizinkan).</li>
+        <li>Pilih tipe instalasi: <em>Custom (advanced)</em> → pilih disk virtual yang Anda buat → klik Next untuk memulai proses copy files dan instalasi.
+          Proses ini akan otomatis berulang-boot beberapa kali.
+        </li>
+        <li>Setelah instalasi selesai, Windows akan memandu Anda membuat user, password, dan pengaturan awal (waktu, zona, koneksi jaringan).</li>
+        <li>Periksa Device Manager — jika ada perangkat yang belum terinstal (tanda seru kuning), kita akan memperbaikinya dengan Guest Additions.</li>
+      </ol>
+
+      <pre><code>Tip: Bila layar tetap hitam atau resolusi aneh setelah instalasi, pasang Guest Additions (langkah selanjutnya).</code></pre>
+    </section>
+
+    <section id="guest-additions">
+      <img src="images/guest-additions.png" alt="Install VirtualBox Guest Additions" style="width:100%;border-radius:10px;margin:12px 0">
+      <h2>4. Menginstall VirtualBox Guest Additions (penting)</h2>
+      <p>Guest Additions meningkatkan performa grafis, sharing clipboard, drag & drop, dan shared folders.</p>
+      <ol>
+        <li>Di jendela VirtualBox saat VM hidup: pilih <em>Devices → Insert Guest Additions CD image…</em></li>
+        <li>Buka <em>Computer</em> di Windows 7 → buka CD drive virtual → jalankan <code>VBoxWindowsAdditions.exe</code> atau <code>VBoxWindowsAdditions-amd64.exe</code> untuk 64-bit.</li>
+        <li>Ikuti wizard instalasi → reboot VM jika diminta.</li>
+        <li>Setelah reboot, masuk ke <em>Devices → Shared Clipboard → Bidirectional</em> dan <em>Drag and Drop → Bidirectional</em> jika ingin berbagi clipboard/file antara host dan guest.
+        </li>
+      </ol>
+
+      <div class="note">Jika instalasi Guest Additions gagal di pertama kali, jalankan installer sebagai Administrator dan pastikan Windows Update menyediakan beberapa komponen .NET/driver yang dibutuhkan.</div>
+    </section>
+
+    <section id="tips">
+      <h2>5. Tips, Optimasi & Troubleshooting</h2>
+      <ul>
+        <li><strong>Lambat saat boot/install:</strong> Pastikan host tidak kehabisan RAM atau CPU. Tutup aplikasi berat di host.</li>
+        <li><strong>Masalah jaringan:</strong> Coba mode NAT dulu. Jika butuh IP lokal, pilih Bridged dan pastikan driver jaringan host mengizinkan mode bridged.</li>
+        <li><strong>Windows Update tidak jalan:</strong> Windows 7 tidak lagi mendapatkan update terbaru — beberapa paket update lama diperlukan agar Windows Update bekerja. Gunakan browser untuk mengunduh driver manual bila perlu.</li>
+        <li><strong>Resolusi layar jelek:</strong> Pastikan Guest Additions terinstall dan video memory cukup.</li>
+        <li><strong>VirtualBox Extension Pack:</strong> Untuk fitur USB 2.0/3.0, pasang Extension Pack di host VirtualBox (di aplikasi VirtualBox -> File -> Preferences -> Extensions).</li>
+      </ul>
+    </section>
+
+    <section id="faq">
+      <h2>6. FAQ singkat</h2>
+      <ul>
+        <li><strong>Apakah Windows 7 aman dipakai?</strong> Windows 7 sudah mencapai <em>end of life</em> — sebaiknya gunakan hanya untuk kebutuhan legacy dan jangan menyimpan data sensitif.</li>
+        <li><strong>Bisa import VMDK/VM dari VMware?</strong> Ya, VirtualBox mendukung impor VMDK atau konversi VM, namun periksa pengaturan driver setelah impor.</li>
+        <li><strong>Perlukah aktivasi?</strong> Iya, untuk penggunaan penuh dan legal Anda memerlukan product key Windows 7 yang valid.</li>
+      </ul>
+    </section>
+
+  </article>
+
+  <aside>
+    <h3>Ringkasan singkat</h3>
+    <ol>
+      <li>Siapkan ISO & VirtualBox</li>
+      <li>Buat VM → atur RAM/CPU/disk</li>
+      <li>Mount ISO → Start → Install</li>
+      <li>Install Guest Additions
+      </li>
+    </ol>
+
+    <h3>Checklist sebelum mulai</h3>
+    <ul>
+      <li>ISO Windows 7 ✅</li>
+      <li>VirtualBox terinstal ✅</li>
+      <li>Virtualisasi aktif di BIOS ✅</li>
+      <li>Ruang disk mencukupi ✅</li>
+    </ul>
+
+    <h3>Download & sumber</h3>
+    <p class="meta">Unduh VirtualBox dari situs resmi Oracle. Unduh ISO Windows 7 hanya dari sumber yang sah (Microsoft atau vendor tempat Anda membeli lisensi).</p>
+
+    <h3>Butuh file .Zip?</h3>
+    <p class="meta">Jika Anda ingin saya siapkan file Zip yang bisa diunduh, beri tahu — saya akan ekspor versi zip.</p>
+  </aside>
+</div>
+ 
+<footer>
+  &copy;Putyz (Tutorial dibuat otomatis — disesuaikan untuk pemula. Jangan lupa backup VM Anda sebelum bereksperimen.)
+</footer>
+
+  </main>
+  <script src="flrx.js"></script>
+</body>
+</html>
